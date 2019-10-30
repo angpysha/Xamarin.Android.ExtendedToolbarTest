@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ExtendedToolbarTest.Controls.UserImageContentView"
+             xmlns:controls="clr-namespace:ExtendedToolbarTest.Controls;assembly=ExtendedToolbarTest"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
+  <ContentView.Content>
+      <Grid>
+          <Label Text="Test"></Label>
+          <forms:CachedImage HeightRequest="54"
+           WidthRequest="54"
+           Source="{Binding Image}"
+           DownsampleToViewSize="True"
+           Aspect="AspectFit">
+              <forms:CachedImage.GestureRecognizers>
+                  <TapGestureRecognizer Command="{Binding ImagePressedCommand}"></TapGestureRecognizer>
+              </forms:CachedImage.GestureRecognizers>
+          </forms:CachedImage>
+      </Grid>
+    </ContentView.Content>
+</ContentView>
